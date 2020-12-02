@@ -4,13 +4,8 @@ services:
   - docker
 language: java
 
-dist: bionic
-
 before_install:
   - chmod +x gradlew
-
-jdk:
-  - openjdk15
 
 env:
   global:
