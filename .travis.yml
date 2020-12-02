@@ -3,21 +3,36 @@ sudo: required
 services:
   - docker
 language: java
+install: skip
+
+os: linux
+dist: trusty
+jdk:
+  - openjdk15
 
 
 before_install:
   - chmod +x gradlew
 
-jdk:
-  - openjdk15
+
 
 env:
   global:
     - DOCKER_IMAGE=mista123/test:1.0.0$TRAVIS_JOB_NUMBER
 
 script:
-  - gradle bootJar
+  - ./gradlew bootJar
   - docker build -t "$DOCKER_IMAGE" .
+
+
+before_cache:
+  - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
+  - rm -fr $HOME/.gradle/caches/*/plugin-resolution/
+
+cache:
+  directories:
+    - $HOME/.gradle/caches/
+    - $HOME/.gradle/wrapper/
 
 after_success:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
