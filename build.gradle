@@ -16,17 +16,14 @@ repositories {
 
 dependencies {
 
+	implementation "org.springframework.boot:spring-boot-starter-actuator"
 
 	implementation 'org.springframework.boot:spring-boot-starter'
 
-	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
-	runtimeOnly 'org.postgresql:postgresql'
 	testImplementation('org.springframework.boot:spring-boot-starter-test') {
 		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
 	}
 
-	implementation("org.hibernate:hibernate-spatial")
-	implementation("org.springframework.boot:spring-boot-starter-data-jpa")
 	implementation("org.springframework.boot:spring-boot-starter-web")
 	implementation("org.springframework.boot:spring-boot-starter-data-rest")
 
@@ -42,7 +39,6 @@ dependencies {
 	implementation("com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:latest.release") {
 		because("Needed to parse log4j2.yml")
 	}
-	annotationProcessor("org.springframework.boot:spring-boot-starter-data-jpa")
 	annotationProcessor("org.springframework.boot:spring-boot-configuration-processor")
 
 	testImplementation("org.springframework.boot:spring-boot-starter-test") {

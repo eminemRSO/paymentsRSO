@@ -1,10 +1,10 @@
-package me.eminem.demoRSO;
+package me.eminem.katalogRSO;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class DemoRsoApplicationTests {
+class KatalogRsoApplicationTests {
 
 	@Test
 	void contextLoads() {

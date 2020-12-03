@@ -1,18 +1,7 @@
 server:
   servlet:
-    context-path: /karkol
-  port: 8085
+    context-path: /katalog
+  port: 8087
 
-jpa:
-  hibernate:
-    ddl-auto: none
-  database: POSTGRESQL
-  show-sql: true
 
-spring:
-  datasource:
-    initialization-mode: always
-    platform: postgres
-    url: jdbc:postgresql://localhost:5432/image-metadata
-    username: dbuser
-    password: postgres
+

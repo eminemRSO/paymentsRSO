@@ -1,13 +1,13 @@
-package me.eminem.demoRSO;
+package me.eminem.katalogRSO;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class DemoRsoApplication {
+public class KatalogRsoApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(DemoRsoApplication.class, args);
+		SpringApplication.run(KatalogRsoApplication.class, args);
 		System.out.println("Pozdrav, aplikacija se je zaštartala");
 	}
 

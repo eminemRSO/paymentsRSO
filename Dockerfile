@@ -4,9 +4,9 @@ RUN mkdir /app
 
 WORKDIR /app
 
-ADD ./build/libs/demoRSO-0.0.1-SNAPSHOT.jar /app
+ADD ./build/libs/katalogRSO-0.0.1-SNAPSHOT.jar /app
 
-EXPOSE 8085
+EXPOSE 8087
 
-ENTRYPOINT ["java", "-jar", "demoRSO-0.0.1-SNAPSHOT.jar"]
+ENTRYPOINT ["java", "-jar", "katalogRSO-0.0.1-SNAPSHOT.jar"]
 #CMD java -jar image-catalog-api-1.0.0-SNAPSHOT.jar
