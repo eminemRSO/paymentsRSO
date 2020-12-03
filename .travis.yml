@@ -18,11 +18,11 @@ before_install:
 
 env:
   global:
-    - DOCKER_IMAGE=mista123/katalog-rso:1.0.0$TRAVIS_JOB_NUMBER
+    - DOCKER_IMAGE=mista123/katalog-rso
 
 script:
   - ./gradlew bootJar
-  - docker build -t "$DOCKER_IMAGE" .
+  - docker build -t "$DOCKER_IMAGE:$TRAVIS_JOB_NUMBER" -t "$DOCKER_IMAGE:latest" .
 
 
 before_cache:
