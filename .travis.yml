@@ -18,7 +18,7 @@ before_install:
 
 env:
   global:
-    - DOCKER_IMAGE=mista123/katalogRSO:1.0.0$TRAVIS_JOB_NUMBER
+    - DOCKER_IMAGE=mista123/katalog-rso:1.0.0$TRAVIS_JOB_NUMBER
 
 script:
   - ./gradlew bootJar
