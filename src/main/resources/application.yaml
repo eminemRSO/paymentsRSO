@@ -14,3 +14,9 @@ spring:
     hibernate:
       ddl-auto: create-drop
 
+management:
+  health:
+    livenessstate:
+      enabled: true
+    readinessstate:
+      enabled: true
