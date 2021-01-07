@@ -39,6 +39,11 @@ dependencies {
 	implementation("com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:latest.release") {
 		because("Needed to parse log4j2.yml")
 	}
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation 'org.postgresql:postgresql:42.2.18'
+
+	implementation 'org.modelmapper:modelmapper:2.3.0'
+
 	annotationProcessor("org.springframework.boot:spring-boot-configuration-processor")
 
 	testImplementation("org.springframework.boot:spring-boot-starter-test") {

@@ -40,12 +40,14 @@ services:
 
   katalog:
       container_name: katalog
-      image: mista123/katalog-rso:1.0.0
+      image: mista123/katalog-rso:latest
       networks:
         - net
       ports:
         - 8087:8087
-
+      environment:
+        - db_user=postgres
+        - db_pw=postgres
 
 volumes:
   image-db:

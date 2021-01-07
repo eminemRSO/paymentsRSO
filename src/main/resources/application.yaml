@@ -3,5 +3,14 @@ server:
     context-path: /katalog
   port: 8087
 
-
+spring:
+  datasource:
+    initialization-mode: always
+    platform: postgres
+    url: jdbc:postgresql://83.212.127.63:5432/rso
+    username: ${db_user}
+    password: ${db_pw}
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
 
