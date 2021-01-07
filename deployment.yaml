@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: rso-deployment
+  name: rso-payments
 spec:
   replicas: 1
   selector:
@@ -13,7 +13,7 @@ spec:
         app: rso
     spec:
       containers:
-        - image: mista123/katalog-rso:latest
+        - image: mista123/payments-rso:latest
           name: katalog
           env:
             - name: db_user
@@ -21,21 +21,21 @@ spec:
             - name: db_pw
               value: postgres
           ports:
-            - containerPort: 8087
+            - containerPort: 8091
               name: server
               protocol: TCP
           livenessProbe:
             httpGet:
-              path: /katalog/actuator/health
+              path: /actuator/health
               port: server
-            initialDelaySeconds: 10
-            periodSeconds: 3
+            initialDelaySeconds: 20
+            periodSeconds: 5
           readinessProbe:
             httpGet:
-              path: /katalog/actuator/health
+              path: /actuator/health
               port: server
-            initialDelaySeconds: 10
-            periodSeconds: 3
+            initialDelaySeconds: 20
+            periodSeconds: 5
 
 ---
 
@@ -46,7 +46,7 @@ metadata:
 spec:
   type: LoadBalancer
   ports:
-    - port: 8087
+    - port: 8091
       protocol: TCP
       targetPort: server
   selector:

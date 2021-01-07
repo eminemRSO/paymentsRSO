@@ -1,4 +1,4 @@
-package me.eminem.katalogRSO;
+package me.eminem.paymentsRSO;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

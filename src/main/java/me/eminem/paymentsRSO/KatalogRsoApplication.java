@@ -1,4 +1,4 @@
-package me.eminem.katalogRSO;
+package me.eminem.paymentsRSO;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
