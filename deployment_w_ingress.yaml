@@ -44,7 +44,7 @@ kind: Service
 metadata:
   name: rso-payments
 spec:
-  type: LoadBalancer
+  type: ClusterIP
   ports:
     - port: 8091
       protocol: TCP
